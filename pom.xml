@@ -6,7 +6,6 @@
     <packaging>pom</packaging>
     <version>0.0.1</version>
     <modules>
-        <module>heimdallr-ml</module>
         <module>heimdallr-crawler</module>
     </modules>
     <name>heimdallr</name>
