@@ -1,5 +1,8 @@
 package com.gitee.code4fun.processor.bbs51credit;
 
+import us.codecraft.webmagic.Site;
+import us.codecraft.webmagic.processor.PageProcessor;
+
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
@@ -25,7 +28,7 @@ public class All51CreditPageProcessor implements PageProcessor {
                 nextLinks.add(link);
             }
         });
-        allLinks.clear();
+    allLinks.clear();
         page.addTargetRequests(nextLinks);
         /*List<String> links = html.xpath("//th[@class='new']/a[@class='s xst']").links().all();
         List<String> linkTitles = html.xpath("//th[@class='new']/a[@class='s xst']/text()").all();

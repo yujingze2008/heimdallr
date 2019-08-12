@@ -7,6 +7,10 @@
     <version>0.0.1</version>
     <modules>
         <module>heimdallr-crawler</module>
+        <module>heimdallr-streaming</module>
+        <module>heimdallr-storm</module>
+        <module>heimdallr-hbase</module>
+        <module>heimdallr-flink</module>
     </modules>
     <name>heimdallr</name>
     <description>海姆达尔</description>
