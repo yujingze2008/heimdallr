@@ -11,6 +11,8 @@
         <module>heimdallr-storm</module>
         <module>heimdallr-hbase</module>
         <module>heimdallr-flink</module>
+        <module>heimdallr-streaming-etl-flink</module>
+        <module>heimdallr-streaming-etl-spark</module>
     </modules>
     <name>heimdallr</name>
     <description>海姆达尔</description>
