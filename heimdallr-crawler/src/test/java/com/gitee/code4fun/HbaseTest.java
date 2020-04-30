@@ -1,5 +1,7 @@
 package com.gitee.code4fun;
 
+import com.gitee.code4fun.util.HbaseUtils;
+import com.gitee.code4fun.util.RandomCreditCardNumberGenerator;
 import com.github.jsonzou.jmockdata.JMockData;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;

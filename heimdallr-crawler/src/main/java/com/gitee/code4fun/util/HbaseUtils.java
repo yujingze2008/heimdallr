@@ -1,4 +1,4 @@
-package com.gitee.code4fun;
+package com.gitee.code4fun.util;
 
 import javafx.scene.control.Tab;
 import org.apache.hadoop.conf.Configuration;

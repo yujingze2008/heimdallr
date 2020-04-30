@@ -1,12 +1,10 @@
-package com.gitee.code4fun.processor.bbs51credit;
+package com.gitee.code4fun.processor;
 
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 
 import java.util.ArrayList;

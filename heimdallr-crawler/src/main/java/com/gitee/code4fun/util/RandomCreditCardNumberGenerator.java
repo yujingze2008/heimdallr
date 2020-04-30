@@ -1,4 +1,4 @@
-package com.gitee.code4fun;
+package com.gitee.code4fun.util;
 
 /**
  * Created by Administrator on 2018/12/8.
