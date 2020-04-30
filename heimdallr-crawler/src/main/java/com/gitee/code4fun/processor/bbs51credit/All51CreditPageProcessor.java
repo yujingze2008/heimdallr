@@ -19,6 +19,7 @@ public class All51CreditPageProcessor implements PageProcessor {
 
     private Site site = Site.me().setRetryTimes(3).setSleepTime(1000);
 
+    @Override
     public void process(Page page) {
         Html html = page.getHtml();
         List<String> allLinks = html.links().all();
@@ -30,13 +31,14 @@ public class All51CreditPageProcessor implements PageProcessor {
         });
     allLinks.clear();
         page.addTargetRequests(nextLinks);
-        /*List<String> links = html.xpath("//th[@class='new']/a[@class='s xst']").links().all();
+        List<String> links = html.xpath("//th[@class='new']/a[@class='s xst']").links().all();
         List<String> linkTitles = html.xpath("//th[@class='new']/a[@class='s xst']/text()").all();
         for (int i = 0; i < links.size(); i++) {
             System.out.println("link:"+links.get(i)+",title:"+linkTitles.get(i));
-        }*/
+        }
     }
 
+    @Override
     public Site getSite() {
         return site;
     }
