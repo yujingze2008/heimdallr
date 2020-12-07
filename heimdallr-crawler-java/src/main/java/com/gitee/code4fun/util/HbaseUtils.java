@@ -28,11 +28,11 @@ public class HbaseUtils {
         }
     }
 
-    static Connection getConnection(){
+    public static Connection getConnection(){
         return connection;
     }
 
-    static void createTable(String tableName,String[] cfs) throws Exception{
+    public static void createTable(String tableName,String[] cfs) throws Exception{
         Admin admin = connection.getAdmin();
         TableName tn = TableName.valueOf(tableName);
         HTableDescriptor descriptor = new HTableDescriptor(tn);
@@ -42,7 +42,7 @@ public class HbaseUtils {
         admin.createTable(descriptor);
     }
 
-    static boolean existTable(String tableName) throws Exception{
+    public static boolean existTable(String tableName) throws Exception{
         Admin admin = connection.getAdmin();
         return admin.tableExists(TableName.valueOf(tableName));
     }
