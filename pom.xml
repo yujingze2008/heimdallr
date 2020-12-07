@@ -6,9 +6,10 @@
     <packaging>pom</packaging>
     <version>0.0.1</version>
     <modules>
-        <module>heimdallr-crawler</module>
+        <module>heimdallr-crawler-java</module>
         <module>heimdallr-streaming-etl-flink</module>
         <module>heimdallr-streaming-etl-spark</module>
+        <module>heimdallr-test</module>
     </modules>
     <name>heimdallr</name>
     <description>海姆达尔</description>

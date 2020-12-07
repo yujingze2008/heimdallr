@@ -1,7 +1,5 @@
-package com.gitee.code4fun;
+package com.gitee.fun2code;
 
-import com.gitee.code4fun.util.HbaseUtils;
-import com.gitee.code4fun.util.RandomCreditCardNumberGenerator;
 import com.github.jsonzou.jmockdata.JMockData;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -156,7 +154,7 @@ public class HbaseTest {
             Connection myConnection = null;
                 Configuration conf = HBaseConfiguration.create();
                 try {
-                    myConnection = ConnectionFactory.createConnection(conf);
+                    myConnection = (Connection) ConnectionFactory.createConnection(conf);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

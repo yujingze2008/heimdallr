@@ -1,13 +1,13 @@
-package com.gitee.code4fun;
+package com.gitee.fun2code;
 
-import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.kafka.clients.consumer.*;
-import org.apache.kafka.clients.producer.*;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Properties;
 import java.util.Random;

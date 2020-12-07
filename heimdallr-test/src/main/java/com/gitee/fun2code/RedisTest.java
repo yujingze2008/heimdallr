@@ -1,9 +1,7 @@
-package com.gitee.code4fun;
+package com.gitee.fun2code;
 
 import org.apache.commons.lang.time.StopWatch;
 import redis.clients.jedis.Jedis;
-
-import java.util.UUID;
 
 /**
  * Created by Administrator on 2018/7/5.

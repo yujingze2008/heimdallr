@@ -1,4 +1,4 @@
-package com.gitee.code4fun;
+package com.gitee.fun2code;
 
 import com.github.jsonzou.jmockdata.JMockData;
 import org.apache.kudu.ColumnSchema;

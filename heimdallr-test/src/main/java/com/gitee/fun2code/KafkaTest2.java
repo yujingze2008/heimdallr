@@ -1,13 +1,10 @@
-package com.gitee.code4fun;
+package com.gitee.fun2code;
 
 import org.apache.kafka.clients.consumer.*;
-import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Properties;
-import java.util.Random;
 
 public class KafkaTest2 {
 
