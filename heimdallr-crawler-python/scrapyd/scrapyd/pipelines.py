@@ -10,4 +10,5 @@ from itemadapter import ItemAdapter
 
 class ScrapydPipeline:
     def process_item(self, item, spider):
+        print("^^^^from pipe:" + item['title'])
         return item
