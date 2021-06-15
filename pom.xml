@@ -10,6 +10,7 @@
         <module>heimdallr-streaming-etl-flink</module>
         <module>heimdallr-streaming-etl-spark</module>
         <module>heimdallr-test</module>
+        <module>heimdallr-common</module>
     </modules>
     <name>heimdallr</name>
     <description>海姆达尔</description>
@@ -91,6 +92,13 @@
                 <artifactId>hbase-it</artifactId>
                 <version>1.2.0</version>
             </dependency>-->
+
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>2.7.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
