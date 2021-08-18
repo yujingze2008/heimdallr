@@ -14,6 +14,8 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.ProcessFunction;
+import org.apache.flink.streaming.api.windowing.assigners.TumblingProcessingTimeWindows;
+import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
 import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
@@ -28,8 +30,8 @@ public class Iso8583Job {
 
     public static void main(String[] args) throws Exception {
         PropsUtil props = new PropsUtil("jobs/iso8583Job.properties");
-        //logicByOperators(props);
-        logicBySql(props);
+        logicByOperators(props);
+        //logicBySql(props);
     }
 
     public static void logicBySql(PropsUtil props) throws Exception {
@@ -104,13 +106,14 @@ public class Iso8583Job {
             public String getKey(Tuple2<String, BigDecimal> stringBigDecimalTuple2) throws Exception {
                 return stringBigDecimalTuple2.f0;
             }
-        }).reduce(new ReduceFunction<Tuple2<String, BigDecimal>>() {
+        }).window(TumblingProcessingTimeWindows.of(Time.seconds(3))).reduce(new ReduceFunction<Tuple2<String, BigDecimal>>() {
             //根据币种进行金额汇总
             @Override
             public Tuple2<String, BigDecimal> reduce(Tuple2<String, BigDecimal> t2, Tuple2<String, BigDecimal> t1) throws Exception {
                 return new Tuple2<String, BigDecimal>(t2.f0, t2.f1.add(t1.f1));
             }
         }).print();
+
 
         //侧输出明细到doris
         DataStream<String> detailOut = out.getSideOutput(detailTag);
@@ -143,14 +146,14 @@ public class Iso8583Job {
                             ps.setString(9, entity.getCardAcceptorIdentificationCode());
                             ps.setString(10, entity.getCardAcceptorNameLocation());
                             ps.setString(11, entity.getCurrencyCode());
-                        }, JdbcExecutionOptions.builder().withBatchSize(100).build()
+                        }, JdbcExecutionOptions.builder().withBatchSize(1).build()
                         , new JdbcConnectionOptions.
                                 JdbcConnectionOptionsBuilder()
                                 .withUrl("jdbc:mysql://192.168.9.10:3306/test")
                                 .withDriverName("com.mysql.jdbc.Driver")
                                 .withUsername("root")
                                 .withPassword("123456")
-                                .build())).setParallelism(30);
+                                .build())).name("insertMySQL").setParallelism(3);
 
         /*detailOut.map(json -> new Gson().fromJson(json, Iso8583Entity.class))
                 .addSink(new JdbcPoolSink("insert into test.iso8583_detail(" +

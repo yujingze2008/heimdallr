@@ -40,21 +40,21 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-java</artifactId>
             <version>1.13.0</version>
-            <!--<scope>provided</scope>-->
+           <!-- <scope>provided</scope>-->
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-java_2.11</artifactId>
             <version>1.13.0</version>
-            <!--<scope>provided</scope>-->
+           <!-- <scope>provided</scope>-->
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-runtime-web_2.11</artifactId>
             <version>1.13.0</version>
-            <!--<scope>provided</scope>-->
+           <!-- <scope>provided</scope>-->
         </dependency>
 
         <dependency>
@@ -68,7 +68,7 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka_2.11</artifactId>
             <version>1.13.0</version>
-           <!-- <scope>provided</scope>-->
+            <!--<scope>provided</scope>-->
         </dependency>
 
         <dependency>
@@ -137,6 +137,20 @@
             <version>4.0.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba.ververica</groupId>
+            <!-- add the dependency matching your database -->
+            <artifactId>flink-connector-mysql-cdc</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-jdbc_2.11</artifactId>
+            <version>1.13.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -173,7 +187,7 @@
                             </filters>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.gitee.fun2code.Test1</mainClass>
+                                    <mainClass>com.gitee.fun2code.jobs.Iso8583Job</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
