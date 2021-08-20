@@ -1,6 +1,6 @@
 package com.gitee.fun2code.sink;
 
-import com.gitee.fun2code.jobs.Iso8583Entity;
+import com.gitee.fun2code.jobs.iso8583.Iso8583Entity;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.flink.configuration.Configuration;

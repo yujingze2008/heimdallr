@@ -1,4 +1,4 @@
-package com.gitee.fun2code.jobs;
+package com.gitee.fun2code.jobs.userclick;
 
 import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.TableEnvironment;

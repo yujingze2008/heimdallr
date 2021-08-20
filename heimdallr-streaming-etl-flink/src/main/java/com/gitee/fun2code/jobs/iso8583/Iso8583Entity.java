@@ -1,4 +1,4 @@
-package com.gitee.fun2code.jobs;
+package com.gitee.fun2code.jobs.iso8583;
 
 import java.math.BigDecimal;
 
